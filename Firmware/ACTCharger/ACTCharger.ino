@@ -1,3 +1,13 @@
+//ACT Charger Firmware V. 1.2 
+//Manages battery charging, discharging, and UI device functions
+//This project's hardware and software are open-source under an MIT License
+//GitHub: github.com/codebylytle/ACT_Charger
+//by Daniel Lytle
+//for the ACT (Automated Coordination of Teams) Lab at USC
+//Lab Website: usc-actlab.github.io
+//5/19/17
+//
+
 #include <Arduino.h>
 #include <LiquidCrystal.h>
 #include <Wire.h>
