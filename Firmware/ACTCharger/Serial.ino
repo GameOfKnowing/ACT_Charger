@@ -5,7 +5,7 @@
 void initSerial(){
   Serial.begin(9600);
   Serial.println("ACT LiPo Charger");
-  Serial.println("Firmware V1.2");
+  Serial.println("Firmware V1.3");
   displayMode = 1;
 }
 
@@ -22,7 +22,6 @@ void getmodeSerial(){
       Serial.println(ch);
       //if user enters "c", continues in charging mode
       if(ch == 'c'){
-        Serial.println("got here");
         chargeAll();
         Serial.println("charging!");
         charRecieved++;

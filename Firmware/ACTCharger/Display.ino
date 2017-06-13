@@ -15,10 +15,11 @@ void initLCD(){
   pinMode(bk, INPUT_PULLUP);
   pinMode(sel, INPUT_PULLUP);
   pinMode(fw, INPUT_PULLUP);
+  lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("ACT LiPo Charger");
   lcd.setCursor(0,1);
-  lcd.print("Firmware V1.0");
+  lcd.print("Firmware V1.3");
   lcd.noCursor();
   delay(2000);
   lcd.clear();
@@ -50,7 +51,7 @@ void getmodeLCD(){
         lcd.setCursor(10,1);
       }
       else{
-        lcd.setCursor(6,0);
+        lcd.setCursor(6,1);
       }
     }
   }
@@ -86,14 +87,14 @@ void progressLCD(){
 //displays a multi-page list of a splash-screen, a list of boards with potentially problematic batteries, & battery capacities,
 //polling user button presses to navigate the list.
 void dataLCD(){
-  char page = 0;
+  int page = 0;
   char updateDisplay = 1;
   while(1){
     if(!digitalRead(bk) && (page >= 1)){
       page--;
       updateDisplay = 1;
     }
-    else if(!digitalRead(fw) && (page < (2+(numBoards*chargersperBoard)))){
+    else if(!digitalRead(fw) && (page < (1+(numBoards*chargersperBoard)))){
       page++;
       updateDisplay = 1;
     }
@@ -101,18 +102,21 @@ void dataLCD(){
       updateDisplay = 0;
       cleanSlate();
       if(page == 0){
+        lcd.clear();
         lcd.print("Discharge Done!");
         lcd.setCursor(0,1);
         lcd.print("Scroll for info.");
       }
       else if(page == 1){
+        lcd.clear();
         lcd.print("Check Boards:");
         lcd.setCursor(0,1);
         lcd.print(checkboardString());
       }
       else {
-        char thisBoard = (page-2)/chargersperBoard;
-        char thisUnit = (page-2)%chargersperBoard;
+        short thisBoard = (page-2)/chargersperBoard;
+        short thisUnit = (page-2)%chargersperBoard;
+        lcd.clear();
         lcd.print("B");
         lcd.print(thisBoard);
         lcd.print("U");
@@ -121,7 +125,7 @@ void dataLCD(){
         lcd.setCursor(0,1);
         lcd.print(batCap[thisBoard][thisUnit]);
       } 
-      delay(50);
+      delay(300);
     }
   }
 }

@@ -25,7 +25,7 @@ bool beginDischarge(){
   }
   digitalWrite(RLATCH, HIGH);
   //sets discharging array to initial conditions (1st battery on each board discharging)
-  for(byte i; i < numBoards; i++){
+  for(byte i = 0; i < numBoards; i++){
     discharging[i] = 1 ;
   }
   return true;

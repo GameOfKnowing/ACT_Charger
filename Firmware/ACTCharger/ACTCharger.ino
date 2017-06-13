@@ -1,11 +1,11 @@
-//ACT Charger Firmware V. 1.2 
+//ACT Charger Firmware V. 1.3 
 //Manages battery charging, discharging, and UI device functions
 //This project's hardware and software are open-source under an MIT License
 //GitHub: github.com/codebylytle/ACT_Charger
 //by Daniel Lytle
 //for the ACT (Automated Coordination of Teams) Lab at USC
 //Lab Website: usc-actlab.github.io
-//5/19/17
+//6.13.17
 //
 
 #include <Arduino.h>
@@ -27,7 +27,7 @@ Adafruit_INA219 ina219_H(0x47);
 const byte numBoards = 2;
 const byte chargersperBoard = 8;
 //sets minimum voltage (mV) that cells can reach during discharge
-const float minV = 3.3;
+const float minV = 3.6;
 //sets variable names for shift register pins
 const byte RSER = 10;
 const byte SRCLK = 11;
@@ -51,7 +51,7 @@ float iReading[numBoards];
 //tracks whether the system as a whole is in datalogging mode or simply charging all batteries. (0 = charging. 1 = discharging)
 char mode = 0;
 //tracks whether the system is tethered and using the serial monitor or untethered and using the LCD & pushbutton interface (0 = LCD. 1 = Serial)
-char displayMode = 0;
+char displayMode = 1;
 
 //defines pins used for the LCD
 LiquidCrystal lcd(7, 6, 2, 3, 4, 5);
@@ -64,18 +64,21 @@ void setup() {
   //Sets shift register pins as outputs
   initRegisters();
   
-  //Sets UI button pins as inputs & enables corresponding internal pullup resistors
-  initButtons();
-  
   //begins charging all batteries
   chargeAll();
   chargeAll();
+
   
+  if(displayMode){
+    //initializes the serial console
+    initSerial();
+  }
+  else{
+  //Sets UI button pins as inputs & enables corresponding internal pullup resistors
+  initButtons();
   //initializes the LCD display (16x2 by default)
-  //initLCD();
-  
-  //initializes the serial console
-  initSerial();
+  initLCD();
+  }
   
   //takes user input to determine whether to charge or discharge batteries
   getmodeInput();
