@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.6.0">
+<eagle version="8.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -10556,10 +10556,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="J15" gate="G$1" pin="16"/>
 </segment>
 <segment>
-<wire x1="-109.22" y1="121.92" x2="-106.68" y2="121.92" width="0.1524" layer="91"/>
-<label x="-106.68" y="121.92" size="1.778" layer="95"/>
-</segment>
-<segment>
 <wire x1="-109.22" y1="149.86" x2="-106.68" y2="149.86" width="0.1524" layer="91"/>
 <label x="-106.68" y="149.86" size="1.778" layer="95"/>
 <pinref part="J15" gate="G$1" pin="12"/>
@@ -10588,6 +10584,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="J14" gate="G$1" pin="2"/>
 <wire x1="-160.02" y1="78.74" x2="-157.48" y2="78.74" width="0.1524" layer="91"/>
 <label x="-157.48" y="78.74" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J15" gate="G$1" pin="1"/>
+<wire x1="-109.22" y1="121.92" x2="-106.68" y2="121.92" width="0.1524" layer="91"/>
+<label x="-106.68" y="121.92" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -10736,10 +10737,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="SUPPLY15" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
-<wire x1="-109.22" y1="124.46" x2="-106.68" y2="124.46" width="0.1524" layer="91"/>
-<label x="-106.68" y="124.46" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="C24" gate="G$1" pin="1"/>
 <wire x1="-109.22" y1="157.48" x2="-99.06" y2="157.48" width="0.1524" layer="91"/>
 <junction x="-99.06" y="157.48"/>
@@ -10764,6 +10761,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="C18" gate="G$1" pin="2"/>
 <wire x1="76.2" y1="-10.16" x2="81.28" y2="-10.16" width="0.1524" layer="91"/>
 <junction x="76.2" y="-10.16"/>
+</segment>
+<segment>
+<pinref part="J15" gate="G$1" pin="2"/>
+<wire x1="-109.22" y1="124.46" x2="-106.68" y2="124.46" width="0.1524" layer="91"/>
+<label x="-106.68" y="124.46" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CHG8" class="0">
@@ -11465,6 +11467,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="-142.24" y="144.78" size="1.778" layer="95"/>
 </segment>
 <segment>
+<pinref part="J15" gate="G$1" pin="3"/>
 <wire x1="-109.22" y1="127" x2="-106.68" y2="127" width="0.1524" layer="91"/>
 <label x="-106.68" y="127" size="1.778" layer="95"/>
 </segment>
@@ -11476,6 +11479,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="-142.24" y="147.32" size="1.778" layer="95"/>
 </segment>
 <segment>
+<pinref part="J15" gate="G$1" pin="4"/>
 <wire x1="-109.22" y1="129.54" x2="-106.68" y2="129.54" width="0.1524" layer="91"/>
 <label x="-106.68" y="129.54" size="1.778" layer="95"/>
 </segment>
@@ -11487,6 +11491,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="-142.24" y="149.86" size="1.778" layer="95"/>
 </segment>
 <segment>
+<pinref part="J15" gate="G$1" pin="5"/>
 <wire x1="-109.22" y1="132.08" x2="-106.68" y2="132.08" width="0.1524" layer="91"/>
 <label x="-106.68" y="132.08" size="1.778" layer="95"/>
 </segment>
@@ -11498,6 +11503,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="-142.24" y="152.4" size="1.778" layer="95"/>
 </segment>
 <segment>
+<pinref part="J15" gate="G$1" pin="6"/>
 <wire x1="-109.22" y1="134.62" x2="-106.68" y2="134.62" width="0.1524" layer="91"/>
 <label x="-106.68" y="134.62" size="1.778" layer="95"/>
 </segment>
